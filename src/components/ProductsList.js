@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import style from '/Users/balprocrew6/Documents/GitHub/code-assessment-web/src/components/ProductsList.js'
+import style from './ProductsList.js'
 
 const ProductsList = ({ title, children }) => (
   <div>

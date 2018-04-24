@@ -17,6 +17,7 @@ const ProductsContainer = ({ products, addToCart }) => (
   </ProductsList>
 )
 
+
 ProductsContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,

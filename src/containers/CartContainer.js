@@ -28,6 +28,8 @@ const mapStateToProps = (state) => ({
   total: getTotal(state)
 })
 
+
+
 export default connect(
   mapStateToProps,
   { checkout }

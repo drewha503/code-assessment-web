@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import style from '/Users/balprocrew6/Documents/GitHub/code-assessment-web/src/components/ProductsList.js'
 
 const ProductsList = ({ title, children }) => (
   <div>
-    <h3>{title}</h3>
+    <h3 className="productTitles">{title}</h3>
     <div>{children}</div>
   </div>
 )

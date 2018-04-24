@@ -1,28 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import style from './cart.css'
+import image from './ProductItem.js'
 
-const Cart  = ({ products, total, onCheckoutClicked }) => {
+
+const Cart  = ({ products, total, onCheckoutClicked, image }) => {
+
+ 
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
       <Product
         title={product.title}
+        image={product.image}
         price={product.price}
         quantity={product.quantity}
         key={product.id}
       />
+      
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className="addtocart">
+    <img className="cartimage" alt="cart" src={require('../Img/Shopping cart.png')} />
+    <p className="cartcopy">Please add some products<br/>to your cart.</p>
+    </div>
   )
 
+
   return (
-    <div>
-      <h3>Your Cart</h3>
+    <div className="cartstyle">
+    <div className="exit"><img className="x " alt="cart" src={require('../Img/x.png')} /></div>
+    <div className="cartheader"
+    >
+      <h3 className="">Your Cart</h3>
+      </div>
       <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
+      <div className="totalbox">
+      <p className="total">Total</p>
+      <div className="totalprice">&#36;{total}</div>
+      </div>
+      <button className="checkoutbutton" onClick={onCheckoutClicked}
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
       </button>

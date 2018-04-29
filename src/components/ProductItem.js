@@ -5,22 +5,19 @@ import style from './productitem.css'
 import ReactDOM from 'react-dom';
 
 
-const ProductItem = ({ product, onAddToCartClicked, image }) => (
+const ProductItem = ({ product, onAddToCartClicked, image, title, inventory, price }) => (
   
   
   <div className="watchcontainer">
-    <div className="watchimage">
-      <img src={product.image} />
-    </div>
      
      <div className="infocontainer">
-        <Product className='productinfo'
+        <Product className=''
           title={product.title}
           price={product.price}
           inventory={product.inventory} 
           image={product.image} 
-          addToCart={onAddToCartClicked}
-          />
+          addToCart={onAddToCartClicked}/>
+
         <button className='productbutton'
           onClick={onAddToCartClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>

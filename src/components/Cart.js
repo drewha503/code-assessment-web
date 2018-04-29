@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 import style from './cart.css'
-import image from './ProductItem.js'
+import img from './ProductItem.js'
 
 
 const Cart  = ({ products, total, onCheckoutClicked, image }) => {
@@ -12,8 +12,8 @@ const Cart  = ({ products, total, onCheckoutClicked, image }) => {
   const nodes = hasProducts ? (
     products.map(product =>
       <Product
-        title={product.title}
         image={product.image}
+        title={product.title}
         price={product.price}
         quantity={product.quantity}
         key={product.id}
@@ -28,6 +28,7 @@ const Cart  = ({ products, total, onCheckoutClicked, image }) => {
   )
 
 
+
   return (
     <div className="cartstyle">
     <div className="exit"><img className="x " alt="cart" src={require('../Img/x.png')} /></div>
@@ -35,9 +36,10 @@ const Cart  = ({ products, total, onCheckoutClicked, image }) => {
     >
       <h3 className="">Your Cart</h3>
       </div>
+      <div className="linebreak"></div>
       <div>{nodes}</div>
       <div className="totalbox">
-      <p className="total">Total</p>
+      <p className="total">Total:</p>
       <div className="totalprice">&#36;{total}</div>
       </div>
       <button className="checkoutbutton" onClick={onCheckoutClicked}

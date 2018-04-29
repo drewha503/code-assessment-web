@@ -3,13 +3,13 @@ import { shallow } from 'enzyme'
 import Cart from './Cart'
 import Product from './Product'
 
-const setup = (total, products = []) => {
+const setup = (total, products, image = []) => {
   const actions = {
     onCheckoutClicked: jest.fn()
   }
 
   const component = shallow(
-    <Cart products={products} total={total} {...actions} />
+    <Cart image={image} products={products} total={total} {...actions} />
   )
 
   return {

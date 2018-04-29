@@ -8,6 +8,7 @@ const setup = product => {
     onAddToCartClicked: jest.fn()
   }
 
+
   const component = shallow(
     <ProductItem product={product} {...actions} />
   )
